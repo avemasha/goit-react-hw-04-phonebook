@@ -2,11 +2,12 @@ import React from "react";
 import './Filter.css'
 import PropTypes from 'prop-types';
 
-const FilterForm = ({setFilterValue, filter}) => {
+const FilterForm = ({ value, onChange }) => {
    return (
               <div>
                 <h4>Find contacts by name</h4>
-                <input placeholder="Enter contact name" filter = {filter} onChange={setFilterValue}></input>
+                <input placeholder="Enter contact name"    value={value}
+                onChange={onChange}></input>
                 
               </div>
             );
@@ -17,5 +18,5 @@ const FilterForm = ({setFilterValue, filter}) => {
     export default FilterForm;
 
     FilterForm.propTypes = {
-      filter: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
      };

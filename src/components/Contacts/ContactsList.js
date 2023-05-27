@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 
 import  './ContactsList.css'
 
-export const ContactsList = ({ states, deleteContact }) =>  { 
+export const ContactsList = ({ contacts, onDeleteContact }) =>  { 
     return(
           <ul> {
             
-      states.map (state  => {
+      contacts.map (({ id, name, number })  => {
         return (
          
             <li key={nanoid()}  >
-              {`${state.name}: ${state.number}`}
+              {`${name}: ${number}`}
               <button type="button" className="deleteBtn"
-              onClick={() => deleteContact(state.id)}
+              onClick={() => onDeleteContact(id)}
                >Delete</button>
             </li> 
            )})
@@ -27,6 +27,6 @@ export const ContactsList = ({ states, deleteContact }) =>  {
 
 
 ContactsList.propTypes = {
-  states: PropTypes.array.isRequired,
+  contacts: PropTypes.array.isRequired,
   
 };
