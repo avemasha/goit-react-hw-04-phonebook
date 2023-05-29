@@ -1,11 +1,11 @@
 .deleteBtn {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 li:not(:last-child) {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
