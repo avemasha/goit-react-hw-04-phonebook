@@ -53,11 +53,11 @@ export default function App() {
     setFilter(evt.currentTarget.value);
   };
 
-  const getVisibleContacts = () => {
+  const getVisibleContacts = (contacts) => {
     const normalizedFilter = filter.toLowerCase();
-
-    return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(normalizedFilter)
+  
+    return contacts.filter(({name}) =>
+      name.toLowerCase().includes(normalizedFilter),
     );
   };
 
@@ -75,7 +75,7 @@ export default function App() {
       <Header header="Contacts"></Header>
       <FilterForm value={filter} onChange={changeFilter} />
       <ContactsList
-        contacts={getVisibleContacts()}
+        contacts={getVisibleContacts(contacts)}
         onDeleteContact={deleteContact}
       />
     </div>
